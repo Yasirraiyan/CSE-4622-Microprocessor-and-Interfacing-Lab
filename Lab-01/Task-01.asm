@@ -1,26 +1,20 @@
+ORG 100h        
 
 .DATA
-    RESULT DW ?        ; 2-Byte result ????? ????
+RESULT DW ?            
 
 .CODE
-START:
-    ; Step 1: AX = (30 + 15) = 45
+
+START:  
     MOV AX, 30
-    ADD AX, 15          ; AX = 45
+    ADD AX, 15           
 
-    ; Step 2: BX = (575 - 225) = 350
     MOV BX, 575
-    SUB BX, 225         ; BX = 350
+    SUB BX, 225          
 
-    ; Step 3: DX:AX = AX * BX = 45 * 350 = 15750
-    MUL BX              ; AX * BX ? ????? DX:AX ??
+    MUL BX              
 
-    ; Step 4: ??? ??? 210 ? AX = AX + 210
-    ADD AX, 210         ; final result AX = 15750 + 210 = 15960
+    ADD AX, 210         
+    MOV RESULT, AX     
 
-    ; Store the final result
-    MOV RESULT, AX
-
-    ; End program
-    MOV AH, 4CH
-    INT 21H
+END START
