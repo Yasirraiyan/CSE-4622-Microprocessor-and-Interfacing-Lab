@@ -33,5 +33,4 @@ END_PROGRAM:
     INT 21h
 
 
-210042152 Task-01.asm
-Displaying 210042152 Task-01.asm.
+
